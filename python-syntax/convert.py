@@ -15,10 +15,29 @@ def convert_temp(unit_in, unit_out, temp):
       convert_temp("f", "c", 212) => 100.0
     """
 
-    # YOUR CODE HERE
+    #C = 5/9 x (F-32)
+    if unit_in == "f":
+      if unit_out == "f":
+        return temp
+      elif unit_out == "c":
+        return (5/9)*(temp-32)
+      else:
+        return ("Invalid unit " + unit_out)
+
+    elif unit_in == "c":
+      if unit_out == "c":
+        return temp
+      elif unit_out == "f":
+        return (((9/5)*temp)+32)
+      else:
+        return ("Invalid unit " + unit_out)
+
+    else:
+        return ("Invalid unit " + unit_in)
 
 
 print("c", "f", 0, convert_temp("c", "f", 0), "should be 32.0")
+print("c", "f", 15, convert_temp("c", "f", 15), "should be 59.0")
 print("f", "c", 212, convert_temp("f", "c", 212), "should be 100.0")
 print("z", "f", 32, convert_temp("z", "f", 32), "should be Invalid unit z")
 print("c", "z", 32, convert_temp("c", "z", 32), "should be Invalid unit z")
