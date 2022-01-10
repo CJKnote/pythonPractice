@@ -11,3 +11,9 @@ def remove_every_other(lst):
         >>> lst
         [1, 2, 3, 4, 5]
     """
+
+    newList = []
+
+    for i in range(0, len(lst), 2):
+        newList.append(lst[i])
+    return newList

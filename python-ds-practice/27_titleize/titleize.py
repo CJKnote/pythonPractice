@@ -7,3 +7,14 @@ def titleize(phrase):
         >>> titleize('oNLy cAPITALIZe fIRSt')
         'Only Capitalize First'
     """
+
+    phrase = phrase.lower()
+    phraseWords = phrase.split(" ")
+
+    title = ""
+    for word in phraseWords:
+        title += word.capitalize() + " "
+
+    #remove space at end
+    return title.strip()
+
