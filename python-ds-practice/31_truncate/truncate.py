@@ -12,6 +12,7 @@ def truncate(phrase, n):
         
         >>> truncate("Yo", 100)
         'Yo'
+
         
     The smallest legal value of n is 3; if less, return a message:
     
@@ -24,3 +25,10 @@ def truncate(phrase, n):
         >>> truncate("Woah", 3)
         '...'
     """
+
+    if n < 3:
+        return "Truncation must be at least 3 characters."
+    elif n > len(phrase) + 3:
+        return phrase
+    else:
+        return phrase[:n - 3] + "..."
