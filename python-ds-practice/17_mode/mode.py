@@ -10,4 +10,15 @@ def mode(nums):
 
         >>> mode([2, 2, 3, 3, 2])
         2
+
+        >>> mode([2, 3, 3, 1, 1, 1, 4, 2, 2, 2, 2, 2])
+        2
+
     """
+    mode = 0
+    for num in nums:
+        if nums.count(num) > mode:
+            mode = num
+    
+    return mode
+
